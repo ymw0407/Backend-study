@@ -55,7 +55,7 @@ Git Convention에 따라 해당 Repository에 과제와 공부하면서 만들�
         <td align="center"><a href="https://github.com/hummingbbird"><img src="https://avatars.githubusercontent.com/u/84303489?v=4" width="100px;" alt=""/><br /><sub><b>이채영</b></sub></a><br /><a href="https://github.com/hummingbbird" title="Code">💻</a></td>
         <td align="center"><a href="https://github.com/ancy0"><img src="https://avatars.githubusercontent.com/u/84322890?v=4" width="100px;" alt=""/><br /><sub><b>안채영</b></sub></a><br /><a href="https://github.com/ancy0" title="Code">💻</a></td>
         <td align="center"><a href="https://github.com/Eonji-sw"><img src="https://avatars.githubusercontent.com/u/85453429?v=4" width="100px;" alt=""/><br /><sub><b>김언지</b></sub></a><br /><a href="https://github.com/Eonji-sw" title="Code">💻</a></td>
-        <td align="center"><a href=""><img src="https://avatars.githubusercontent.com/u/84322890?v=4" width="100px;" alt=""/><br /><sub><b>김규리</b></sub></a><br /><a href="" title="Code">💻</a></td>
+        <td align="center"><a href="https://github.com/gyur2"><img src="https://avatars.githubusercontent.com/u/66067610?v=4" width="100px;" alt=""/><br /><sub><b>김규리</b></sub></a><br /><a href="https://github.com/gyur2" title="Code">💻</a></td>
         <td align="center"><a href="https://github.com/wjdtnghks123"><img src="https://avatars.githubusercontent.com/u/54920289?v=4" width="100px;" alt=""/><br /><sub><b>정수환</b></sub></a><br /><a href="https://github.com/wjdtnghks123" title="Code">💻</a></td>
     </tr>
 </table>
