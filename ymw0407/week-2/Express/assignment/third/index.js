@@ -1,6 +1,7 @@
 import express from "express";
 import swaggerUi from "swagger-ui-express";
 import swaggerJSDoc from "swagger-jsdoc";
+import { options } from "./swagger/config.js";
 
 const app = express();
 const coffee = [
@@ -20,39 +21,41 @@ const user = [
         email: "yunminwo1211@gmail.com",
         name: "윤민우",
         phone: "010-0000-0000",
-        personal: "030407-3******",
+        personal: "******-3******",
         prefer: "ymw0407.github.io",
     },
     {
         email: "yunminwo1211@gmail.com",
         name: "윤민우1",
         phone: "010-0000-0000",
-        personal: "030407-3******",
+        personal: "******-3******",
         prefer: "ymw0407.github.io",
     },
     {
         email: "yunminwo1211@gmail.com",
         name: "윤민우2",
         phone: "010-0000-0000",
-        personal: "030407-3******",
+        personal: "******-3******",
         prefer: "ymw0407.github.io",
     },
     {
         email: "yunminwo1211@gmail.com",
         name: "윤민우3",
         phone: "010-0000-0000",
-        personal: "030407-3******",
+        personal: "******-3******",
         prefer: "ymw0407.github.io",
     },
     {
         email: "yunminwo1211@gmail.com",
         name: "윤민우4",
         phone: "010-0000-0000",
-        personal: "030407-3******",
+        personal: "******-3******",
         prefer: "ymw0407.github.io",
     },
 ];
 const port = 8000;
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerJSDoc(options)));
 
 app.use(express.json());
 app.get("/starbucks", (req, res) => {
