@@ -1,0 +1,12 @@
+// Date 객체를 활용하여 생성 시간 함수 만들기
+
+export function getToday() {
+    const date = new Date();
+    const yyyy = date.getFullYear()
+    const mm = date.getMonth() + 1
+    const dd = date.getDate()
+
+    return `${yyyy}-${mm}-${dd}`
+}
+
+console.log(getToday())
