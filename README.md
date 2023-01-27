@@ -4,6 +4,7 @@
 SuHwan
 # structure
 _github -> week-1 --> assignment / lecture 
+
            week-2 --> assignment / lecture
            week-3 --> assignment / lecture 
 
