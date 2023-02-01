@@ -1,24 +1,26 @@
-// index.js
+//index.js
 
-import { checkValidationEmail, getWelcomeTemplate, sendWelcomeTemplateToEmail } from './email.js';
-
-function createUser(user) {
-	// 1. 이메일이 정상인지 확인(1-존재여부, 2-"@"포함여부)
-  const isValid = checkValidationEmail(user.email);
-  if (isValid) {
-    // 2. 가입환영 템플릿 만들기
-    const template = getWelcomeTemplate(user);
-
-    // 3. 이메일에 가입환영 템플릿 전송하기
-    sendWelcomeTemplateToEmail(user.email, template);
-  }
+/*format 문자열을 출력할 때는 작은 따옴표나 큰 따옴표가 아닌 백틱(``)을 사용함!*/
+/*가독성 좋게 html 문자열을 출력할 때도 백틱 사용 */
+function getWelcomeTemplate(name, age, school, createdAt){
+  return `
+    <html>
+        <body>
+            <h1>${name}님 가입을 환영합니다.</h1>
+            <hr />
+            <div>이름: ${name}</div>
+            <div>나이: ${age}살</div>
+            <div>학교: ${school}</div>
+            <div>가입일: ${createdAt}</div>
+        </body>
+    </html>
+  `;
 }
 
-const myUser = {
-  name: '철수',
-  age: 13,
-  school: '다람쥐초등학교',
-  email: 'a@a.com',
-};
+const myName = '채영';
+const myAge = 22;
+const mySchool = "국민대학교";
+const myCreatedAt = "2023-02-01";
 
-createUser(myUser);
+const result = getWelcomeTemplate(myName, myAge, mySchool, myCreatedAt);
+console.log(result);
