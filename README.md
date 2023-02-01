@@ -1,7 +1,7 @@
 # Backend-study
 2023년도 KOSS 동계 백엔드 스터디
 
-Structure
+# Structure
   
   week1 - assignment / lecture 
 
