@@ -4,5 +4,7 @@
 Structure
   
   week1 - assignment / lecture 
+
   week2 - assignment / lecture 
+
   week3 - assignment / lecture 
