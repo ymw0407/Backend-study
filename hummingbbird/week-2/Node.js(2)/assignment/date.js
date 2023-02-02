@@ -1,19 +1,15 @@
-const now = () => {
-    const date = new Date();
-    const yyyy = String(date.getFullYear()).padStart(4, "0");
-    const mm = String(date.getMonth() + 1).padStart(2, "0");
-    const dd = String(date.getDate()).padStart(2, "0");
-    const hh = String(date.getHours()).padStart(2, "0");
-    const mi = String(date.getMinutes()).padStart(2, "0");
-    const ss = String(date.getSeconds()).padStart(2, "0");
+function getToday(){
+    const date = new Date()
+    const yyyy = date.getFullYear()
+    const mm = date.getMonth()
+    const dd = date.getDay()
+    const hh = date.getHours()
+    const m = date.getMinutes()
+    const ss = date.getSeconds()
 
-    return `${yyyy}년 ${mm}월 ${dd}일 ${hh}:${mi}:${ss}`;
+    return `오늘은 ${yyyy}년 ${mm}월 ${dd}일 ${hh}:${m}:${ss}입니다.`
 };
 
-const welcome = () => {
-    const date = now();
-    const text = `오늘은 ${date}입니다.`
-    console.log(text)
-};
+console.log(getToday())
 
-welcome()
+
