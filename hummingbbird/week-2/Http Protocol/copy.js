@@ -1,66 +1,84 @@
-// string copy 확인
-{
-    let stringCopy = "철수";
-    let stringCopy2 = stringCopy;
+//데이터 타입에 따른 저장 방식
 
-    stringCopy = "철수 아님";
+//1.문자열과 숫자 -> 메모리에 값이 직접 저장
+let myMoney = 1000;
+let myMoney2 = myMoney;
 
-    console.log(stringCopy); // 철수 아님
-    console.log(stringCopy2); // 철수
-}
-/**
- * string 및 Number, undefined, Boolean, Symbol, BigInt와 같은 경우에는
- * 변경 불가능한 immutable value라고 볼 수 있습니다.
- * 이와 같은 변수 타입들은 copy를 하게 되었을때, 값 자체를 복사하기 때문에
- * deep copy를 한다고 볼 수 있습니다.
- */
+myMoney2; // 1000
+myMoney = 500;
+myMoney2; // 1000
+//--> 이렇게 myMoney의 값을 바꿔주어도 myMoney2의 값이 바뀌지 않음(얕은 복사)
 
-// Object copy 확인
-{
-    let objectCopy = {
-        name: "철수",
-        age: 20,
-        school: "Kookmin Univ.",
-    };
-    let objectCopy2 = objectCopy;
+//2.배열과 객체 -> 메모리에 데이터의 '주소값'이 저장 됨
+//그러면 기존 값이 바뀌면 복사한 2 값도 같이 바뀌는 거임(깊은 복사)
 
-    objectCopy.age = 21;
+/////////////////////////////////////////////////////////////////////
+//얕은 복사와 깊은 복사
+//1.얕은 복사
+const profile = {
+    name: "영희", // profile.name의 값(문자열)을 직접 주입
+    age: 12,
+    school: "국민초등학교",
+  };
 
-    console.log(objectCopy.age); // 21
-    console.log(objectCopy2.age); // 21
-}
-/**
- * Object 및 Array, function 타입은 참조 타입으로, 메모리 할당 같은 경우에는 주소를 참조하게 된다.
- * 참조타입들은 값이 변할 수 있기 때문에 immutable하지 않다고 한다.
- * 따라서 const로 선언을 하더라도, properties들은 변할 수 있다.
- * 또한 copy를 했을때, properties가 바뀌어도, 주소 값은 변하지 않기 때문에 내부의 값들은 동기화가 되고
- * 이를 shallow copy라고 한다.
- */
+const profile3 = {
+    name: profile.name, // profile.name의 값(문자열)을 직접 주입
+    age: profile.age,
+    school: profile.school,
+  };
+  
+profile.name = '훈이';
+  
+profile3.name; // '영희'
+// 실제 값인 문자열을 복사해주었기 때문에 서로 영향을 끼치지 않음!(깊은 복사야?)
+//근데 귀찮잖아 언제 저렇게 하나씩 해주고 있어 -> spread 연산자 사용
+const profile4 = {...profile3};
+profile3.name = "맹구";
+profile4.name; //영희
 
-// spread 연산자 ...
-{
-    let objectCopy = {
-        name: "철수",
-        age: 20,
-        school: "Kookmin Univ.",
-        hobby: {
-            one: "피아노",
-            two: "산책",
-        },
-    };
-    let objectCopy2 = { ...objectCopy };
+const result = [];
+const arr = [1,2,3];
+const arr2 = [4,5,6];
 
-    objectCopy.age = 22;
+result.push(...arr, ...arr2); //[1,2,3,4,5,6]
+//이렇게 배열의 원소들이 하나씩 result에 들어가는 거야
+//이게 깊은 복사냐?? 그렇지 않음 !!!!! spread 연산자는 얕은 복사를 함
 
-    console.log(objectCopy.age); // 22
-    console.log(objectCopy2.age); // 20
 
-    objectCopy.hobby.one = "피아노 아닌뒈...";
 
-    console.log(objectCopy.hobby.one); // 피아노 아닌뒈...
-    console.log(objectCopy2.hobby.one); // 피아노 아닌뒈...
-}
-/**
- * spread 연산자를 사용하여 원시타입을 갖고 있는 properties들은 제대로 copy된 것을 확인할 수 있습니다.
- * 하지만, 내부에 존재하는 참조타입은 주소값이 copy가 된 것을 확인할 수 있고, 이를 통해서 spread 또한 shallow copy임을 확인할 수 있습니다.
- */
+//2.깊은 복사
+//객체 마냥 생겼지만 사실은 문자열인 상황
+const newProfile = `{
+    name: '철수',
+    age: 13,
+    school: '다람쥐초등학교',
+    hobby: {
+      one: '수영',
+      two: '프로그래밍',
+    },
+  }`
+
+//JSON.stringfy()와 JSON.parse()
+//이렇게 JSON을 이용하면 깊은 복사가 가능함
+JSON.parse(JSON.stringify(newProfile));
+
+//REST 파라미터
+//1.delete 메소드
+const child = {
+    name: '철수',
+    age: 8,
+    school: '다람쥐초등학교',
+    money: 2000,
+    hobby: '수영',
+  };
+
+// delete child.hobby;
+// delete child.money;
+//이렇게 하면 원본 객체를 제어하는 것 -> 옳지 x
+
+//구조 분해 할당을 통해 해결!
+const {money, hobby, ...rest} = child;
+//rest = {이름, 나이, 학교} (이 때 이 아이들은 얕은 복사로 생성되는 애들임)
+
+
+
