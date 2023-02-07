@@ -1,3 +1,5 @@
+// config.js
+
 export const options = {
     definition: {
       openapi: '3.0.0',
