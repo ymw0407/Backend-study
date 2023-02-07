@@ -1,0 +1,1 @@
+### fronted 폴더가 없어도 되지만, 있어야 docker-compose 가 정상 작동함.
