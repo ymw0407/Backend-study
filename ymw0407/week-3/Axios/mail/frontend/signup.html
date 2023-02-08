@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>회원가입 연습하기</title>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script>
+            function check() {
+                // 1. 입력한 휴대폰번호 가져오기
+                const mymail = document.getElementById("mailNum").value;
+                console.log("나의 이메일 주소: ", mymail);
+
+                // 2. 해당 휴대폰번호로 인증번호API 요청하기
+                axios
+                    .post("http://localhost:3000/users", {
+                        myuser: { email: mymail },
+                    })
+                    .then((res) => {
+                        console.log(res);
+                    });
+            }
+        </script>
+    </head>
+    <body>
+        이메일주소: <input type="text" id="mailNum" />
+        <button onclick="check()">보내기</button>
+    </body>
+</html>
