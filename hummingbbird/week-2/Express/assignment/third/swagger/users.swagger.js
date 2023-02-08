@@ -4,7 +4,7 @@
  * @swagger
  * /boards:
  *   get:
- *     summary: 커피 회원 목록 가져오기
+ *     summary: 회원 목록 가져오기
  *     tags: [User]
  *     responses:
  *       200:
