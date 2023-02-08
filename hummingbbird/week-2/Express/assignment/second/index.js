@@ -1,26 +1,26 @@
-import express from "express";
+import express from 'express'
 
-const app = express();
-const coffee = [
-    { name: "아메리카노", kcal: 5 },
-    { name: "카페라떼", kcal: 10 },
-    { name: "콜드브루", kcal: 15 },
-    { name: "카페모카", kcal: 50 },
-    { name: "돌체라떼", kcal: 500 },
-    { name: "카라멜라떼", kcal: 200 },
-    { name: "바닐라라떼", kcal: 20 },
-    { name: "에스프레소", kcal: 1 },
-    { name: "디카페인", kcal: 5 },
-    { name: "오트라떼", kcal: 300 },
-];
-const port = 8000;
+const app = express()
+app.use(express.json())
 
-app.use(express.json());
-app.get("/starbucks", (req, res) => {
-    res.send(coffee);
-    console.log(coffee);
+
+app.get('/starbucks', (req,res) => {
+    const coffee = [
+        {name: '아메리카노', kcal: 5},
+        {name: '카페라떼', kcal: 20},
+        {name: '캬라멜 마끼아또', kcal: 23},
+        {name: '에스프레소', kcal: 5},
+        {name: '아샷추', kcal: 20},
+        {name: '녹차라떼', kcal: 15},
+        {name: '딸기라떼', kcal: 25},
+        {name: '레몬에이드', kcal: 17},
+        {name: '자몽에이드', kcal: 17},
+        {name: '유자차', kcal: 10},
+    ];
+
+    res.send(coffee)
 });
 
-app.listen(port, () => {
-    console.log(`port is listening at ${port}`)
-});
+app.listen(3000, () => {
+    console.log(`Example app listening on port ${3000}`) 
+  })// 3000번 포트에서 실행

@@ -1,11 +1,12 @@
+//config.js
+
 export const options = {
     definition: {
-        openApi: "3.0.0",
+        openapi: '3.0.0',
         info: {
-            title: "Express Assignment 3",
-            version: "1.0.0",
-            description: "A REST API using swagger and express",
+            title: '스타벅스 회원 정보 및 커피 정보 API 명세서!',
+            version: '1.0.0',
         },
     },
-    apis: ["./swagger/starbucks.swagger.js", "./swagger/users.swagger.js"],
+    apis: ['./swagger/*.swagger.js'],
 };

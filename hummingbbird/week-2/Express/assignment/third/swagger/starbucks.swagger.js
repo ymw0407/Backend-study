@@ -1,10 +1,10 @@
-// starbucks.swagger.js
+//starbucks.swagger.js
 
 /**
  * @swagger
- * /starbucks:
+ * /boards:
  *   get:
- *     summary: 커피 메뉴 리스트 가져오기
+ *     summary: 커피 목록 가져오기
  *     tags: [Starbucks]
  *     responses:
  *       200:
@@ -15,21 +15,10 @@
  *                  type: array
  *                  items:
  *                      properties:
- *                          name:
+ *                          name: 
  *                              type: string
  *                              example: 아메리카노
  *                          kcal:
- *                              type: number
+ *                              type: int
  *                              example: 5
- */
-
-/**
- * @swagger
- * /starbucks:
- *   get:
- *     summary: 커피 메뉴 리스트 가져오기
- *     tags: [Starbucks]
- *     responses:
- *          200:
- *              description: 성공
  */

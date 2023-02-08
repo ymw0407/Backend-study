@@ -1,11 +1,11 @@
-// users.swagger.js
+//users.swagger.js
 
 /**
  * @swagger
- * /users:
+ * /boards:
  *   get:
- *     summary: 사용자 리스트 가져오기
- *     tags: [Users]
+ *     summary: 커피 회원 목록 가져오기
+ *     tags: [User]
  *     responses:
  *       200:
  *         description: 성공
@@ -17,29 +17,17 @@
  *                      properties:
  *                          email:
  *                              type: string
- *                              example: yunminwo1211@gmail.com
- *                          name:
+ *                              example: aaa@gmail.com
+ *                          nname:
  *                              type: string
- *                              example: 윤민우
+ *                              example: 철수1
  *                          phone:
  *                              type: string
- *                              example: 010-0000-0000
+ *                              example: 010-1234-5678
  *                          personal:
  *                              type: string
- *                              example: 000000-0000000
+ *                              example: 210110-1111111
  *                          prefer:
  *                              type: string
- *                              example: ymw0407.github.io
- * 
- */
-
-/**
- * @swagger
- * /users:
- *   get:
- *     summary: 사용자 리스트 가져오기
- *     tags: [Users]
- *     responses:
- *          200:
- *              description: 성공
+ *                              example: https://naver.com
  */
